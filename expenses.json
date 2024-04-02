@@ -1,0 +1,16 @@
+{
+    "John": {
+        "password": "123",
+        "balance": 80
+    },
+    "Jane": {
+        "password": "321",
+        "balance": 60
+    },
+    "Marcus": {
+        "password": "1234",
+        "balance": 0
+    },
+    "Billy": {
+    }
+}
