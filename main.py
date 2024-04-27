@@ -20,16 +20,25 @@ if __name__ == '__main__':
                  1. Check balance
                  2. Add income
                  3. Add expenses
-                 4. Show list of expenses\n"""
+                 4. Show list of expenses
+                 5. Return to main menu
+                 6. Change password
+                 7. Log out\n"""
             user_pick = input(menu)
             match user_pick:
-                case "1":
+                case "1": # check balance
                     my_functions.check_balance(user)
-                case "2":
-                    pass
+                case "2": # Add income
+                    my_functions.add_income(user)
                 case "3":
                     pass
                 case "4":
                     pass
+                case "5":
+                    pass
+                case "6":
+                    pass
+                case "7":
+                    pass
         case "3":
-            pass
+            my_functions.forgot_password()
