@@ -7,6 +7,4 @@
 try:
   print(x)
 except NameError as e:
-  print(f"Variable x is not defined, {e}")
-except:
-  print("Something went wrong")
+  print(e)
