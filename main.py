@@ -1,5 +1,5 @@
 import login
-import change_password as pwd
+import expense_tracker as trck
 
 
 if __name__ == '__main__':
@@ -18,8 +18,19 @@ if __name__ == '__main__':
                             7. Log out\n"""
         user_pick = input(menu)
         match user_pick:
+            case "1":
+                print(f" Your current balance is {trck.check_balance()}")
+            case "2":
+                trck.add_income()
+            case "3":
+                expense = trck.add_expense()
+                trck.save_expense_to_file(expense)
+            case "4":
+                trck.show_expenses()
             case "5":
-                pwd.changepwd()
+                pass
+            case "6":
+                login.changepwd()
             case "7":
                 continue
 

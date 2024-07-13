@@ -1,2 +1,5 @@
-Description,Amount,Category,Date
-
+Description,Amount,Category,Date_time
+Bread,12.5,Food,2024-07-13 17:25:37
+bread,12.3,Food,2024-07-13 17:28:05
+,123.0,Food,2024-07-13 17:31:31
+ice ,12.0,Home,2024-07-13 17:33:02

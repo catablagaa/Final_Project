@@ -1,26 +1,29 @@
 import json
 
 
-def read_info_from_users(path="auth.json") -> dict:
+def read_info_from_json(path="auth.json") -> dict:
     with open(path, "r") as f:
         users = json.loads(f.read())
     return users
 
 
-def changepwd(path="auth.json"):
-    auth = read_info_from_users()
+def changepwd():
+    auth = read_info_from_json()
     while True:
         new_password = input("Insert new password: ")
         repeat = input("Write your password again: ")
         if repeat == new_password:
             print("Password updated successfully!")
+            auth["user"]["password"] = new_password
+            with open("auth.json", "w") as f:
+                f.write(json.dumps(auth, indent=4))
             break
         else:
             print("The 2 passwords don't natch. Please try again!")
 
 
 def login(path: str = "auth.json") -> str:
-    user_info = read_info_from_users()
+    user_info = read_info_from_json()
     username = input("Insert username: ")
     while username.lower() not in user_info:
         username = input("User not found! Try again: ")
@@ -32,7 +35,7 @@ def login(path: str = "auth.json") -> str:
 
 
 def check_if_passwd_is_correct(username):
-    user_info = read_info_from_users()
+    user_info = read_info_from_json()
     attempts = 3
     passwd = input(f"Insert password. You have {attempts} attempts: ")
     while user_info[username.lower()]["password"] != passwd:
@@ -44,7 +47,7 @@ def check_if_passwd_is_correct(username):
             passwd = input(f"Wrong password. {attempts} attempts left. Try again: ")
 
 # def add_user_in_auth(path: str = "auth.json"):
-#     users = read_info_from_users("auth.json")
+#     users = read_info_from_json("auth.json")
 #
 #     username = input("Choose your username: ")
 #     while username in users:
@@ -97,7 +100,7 @@ def check_if_passwd_is_correct(username):
 #
 #
 # def add_income(user, path="users.json"):
-#     users = read_info_from_users()
+#     users = read_info_from_json()
 #     added_income = float(input("Insert amount: "))
 #     users[user]["balance"] += added_income
 #     with open(path, "w") as f:
@@ -106,7 +109,7 @@ def check_if_passwd_is_correct(username):
 #
 #
 # def forgot_password():
-#     users = read_info_from_users(path="auth.json")
+#     users = read_info_from_json(path="auth.json")
 #     username = input("Insert username: ")
 #     while username not in users:
 #         username = input("This user doesn't exist. Try again:")
