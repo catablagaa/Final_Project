@@ -1,5 +1,5 @@
 {
   "expense_categories": ["Food", "Home", "Transport", "Fun", "Savings", "Misc", "Housekeeping"],
   "date_time_format": "%Y-%m-%d %H:%M",
-  "attempts": 3
+  "attempts": 4
 }

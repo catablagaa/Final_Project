@@ -108,7 +108,6 @@ Date_time,Name,Amount,Category
 2024-07-31 11:45,juice,5.0,Food
 2024-07-31 12:05,limes,12.0,Food
 2024-07-31 13:08,rent,1123.0,Home
-2024-07-31 13:11,jeans,12.0,Home
 ```
 
 

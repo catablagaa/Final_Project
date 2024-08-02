@@ -143,3 +143,4 @@ def remove_expense(path="expenses.csv"):
                 break
         except Exception:
             print("Please type only the index number of the expense you want to remove. ")
+
